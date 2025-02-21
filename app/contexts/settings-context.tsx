@@ -10,6 +10,7 @@ type Settings = {
   longBreak: number
   autoStartBreaks: boolean
   autoStartPomodoros: boolean
+  startPomodoroOnPip: boolean
 }
 
 type SettingsContextType = {
@@ -23,6 +24,7 @@ const defaultSettings: Settings = {
   longBreak: 15,
   autoStartBreaks: false,
   autoStartPomodoros: false,
+  startPomodoroOnPip: false,
 }
 
 const SettingsContext = createContext<SettingsContextType | undefined>(undefined)

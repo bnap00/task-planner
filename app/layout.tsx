@@ -12,6 +12,8 @@ import { KanbanProvider } from "./contexts/kanban-context"
 import { FilterProvider } from "./contexts/filter-context"
 import { StickyNavbar } from "./components/sticky-navbar"
 import { StickyPomodoro } from "./components/sticky-pomodoro"
+import { LocalStorageNotice } from "./components/local-storage-notice"
+
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -36,6 +38,7 @@ export default function RootLayout({
                   <PipProvider>
                     <KanbanProvider>
                       <FilterProvider>
+                        <LocalStorageNotice />
                         <div className="flex flex-col min-h-screen">
                           <StickyNavbar />
                           <main className="flex-grow pb-16">{children}</main>

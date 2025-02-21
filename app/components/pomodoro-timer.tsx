@@ -7,18 +7,19 @@ import { useTaskContext } from "../contexts/task-context"
 import { useSettingsContext } from "../contexts/settings-context"
 import { usePomodoroContext } from "../contexts/pomodoro-context"
 import { usePipContext } from "../contexts/pip-context"
-import { Minimize2, Maximize2 } from "lucide-react"
+import { Minimize2, Maximize2, Settings } from "lucide-react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
 import { Checkbox } from "@/components/ui/checkbox"
+import { SettingsModal } from "./settings-modal"
 
 export function PomodoroTimer() {
-  const { settings, updateSettings } = useSettingsContext()
+  const { settings } = useSettingsContext()
   const { tasks } = useTaskContext()
   const { time, isActive, mode, selectedTaskId, toggleTimer, resetTimer, setMode, setSelectedTaskId } =
     usePomodoroContext()
   const { pipWindow, openPip, closePip } = usePipContext()
+  const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false)
   const [showPipConfirmation, setShowPipConfirmation] = useState(false)
-  const [dontShowPipConfirmationAgain, setDontShowPipConfirmationAgain] = useState(false)
 
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60)
@@ -48,6 +49,9 @@ export function PomodoroTimer() {
           <Button onClick={pipWindow ? closePip : handleOpenPip} className="w-full">
             {pipWindow ? <Maximize2 className="mr-2 h-4 w-4" /> : <Minimize2 className="mr-2 h-4 w-4" />}
             {pipWindow ? "Close PiP" : "Open PiP"}
+          </Button>
+          <Button onClick={() => setIsSettingsModalOpen(true)} className="w-full">
+            <Settings className="mr-2 h-4 w-4" /> Settings
           </Button>
         </div>
         <Select
@@ -92,19 +96,6 @@ export function PomodoroTimer() {
             <DialogTitle>Start Pomodoro Timer?</DialogTitle>
             <DialogDescription>Opening PiP will start the Pomodoro timer. Do you want to continue?</DialogDescription>
           </DialogHeader>
-          <div className="flex items-center space-x-2">
-            <Checkbox
-              id="dontShowAgain"
-              checked={dontShowPipConfirmationAgain}
-              onCheckedChange={(checked) => {
-                setDontShowPipConfirmationAgain(checked as boolean)
-                updateSettings({ startPomodoroOnPip: checked as boolean })
-              }}
-            />
-            <label htmlFor="dontShowAgain">
-              Don't show this again (This will start the Pomodoro timer when clicking on Open PiP)
-            </label>
-          </div>
           <div className="flex justify-end space-x-2">
             <Button onClick={() => setShowPipConfirmation(false)} variant="outline">
               Cancel
@@ -120,7 +111,7 @@ export function PomodoroTimer() {
           </div>
         </DialogContent>
       </Dialog>
+      <SettingsModal isOpen={isSettingsModalOpen} onClose={() => setIsSettingsModalOpen(false)} />
     </>
   )
 }
-

@@ -10,17 +10,10 @@ import Link from "next/link"
 export function StickyNavbar() {
   const { theme, setTheme } = useTheme()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  
 
   const NavItems = () => (
     <>
-      <Button onClick={() => {}} variant="outline">
-        <Settings className="mr-2 h-4 w-4" /> Settings
-      </Button>
-      <Link href="/blog" passHref>
-        <Button variant="outline">
-          <BookOpen className="mr-2 h-4 w-4" /> Blog
-        </Button>
-      </Link>
       <Link href="/kanban" passHref>
         <Button variant="outline">
           <LayoutKanban className="mr-2 h-4 w-4" /> Kanban
@@ -29,6 +22,11 @@ export function StickyNavbar() {
       <Link href="/project-info" passHref>
         <Button variant="outline">
           <InfoIcon className="mr-2 h-4 w-4" /> Project Info
+        </Button>
+      </Link>
+      <Link href="/blog" passHref>
+        <Button variant="outline">
+          <BookOpen className="mr-2 h-4 w-4" /> Blog
         </Button>
       </Link>
       <Button onClick={() => setTheme(theme === "dark" ? "light" : "dark")} variant="ghost" size="icon">

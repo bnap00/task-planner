@@ -2,14 +2,16 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { ChevronUp, ChevronDown, Play, Pause, RotateCcw } from "lucide-react"
+import { ChevronUp, ChevronDown, Play, Pause, RotateCcw, Wrench } from "lucide-react"
 import { PomodoroTimer } from "./pomodoro-timer"
 import { usePomodoroContext } from "../contexts/pomodoro-context"
 import { usePipContext } from "../contexts/pip-context"
 import { useTaskContext } from "../contexts/task-context"
+import { SettingsModal } from "./settings-modal"
 
 export function StickyPomodoro() {
   const [isExpanded, setIsExpanded] = useState(false)
+  const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false)
   const { time, isActive, mode, selectedTaskId, toggleTimer, resetTimer } = usePomodoroContext()
   const { pipWindow, openPip, closePip } = usePipContext()
   const { tasks } = useTaskContext()
@@ -57,9 +59,13 @@ export function StickyPomodoro() {
             <Button size="sm" variant="outline" onClick={() => setIsExpanded(true)}>
               <ChevronUp className="h-4 w-4" />
             </Button>
+            <Button size="sm" variant="outline" onClick={() => setIsSettingsModalOpen(true)}>
+              <Wrench className="h-4 w-4" />
+            </Button>
           </div>
         </div>
       )}
+      <SettingsModal isOpen={isSettingsModalOpen} onClose={() => setIsSettingsModalOpen(false)} />
     </div>
   )
 }
