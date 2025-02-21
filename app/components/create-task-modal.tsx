@@ -43,7 +43,7 @@ export function CreateTaskModal({ isOpen, onClose, preSelectedQuadrant }: Create
     setUrl("")
     setDeadline("")
     setQuadrant("do-first")
-    setProjectId(undefined)
+    setProjectId('undefined')
     setEstimatedPomodoros(1)
   }
 
@@ -79,7 +79,7 @@ export function CreateTaskModal({ isOpen, onClose, preSelectedQuadrant }: Create
               <SelectValue placeholder="Select project (optional)" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">Unassigned</SelectItem>
+              <SelectItem value={'undefined'}>Unassigned</SelectItem>
               {projects.map((project) => (
                 <SelectItem key={project.id} value={project.id}>
                   {project.name}

@@ -62,7 +62,7 @@ export function KanbanSettingsModal({ isOpen, onClose }: KanbanSettingsModalProp
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Kanban Settings</DialogTitle>
+          <DialogTitle>Kanban Column Settings</DialogTitle>
         </DialogHeader>
         <div className="space-y-4">
           <div className="flex space-x-2">
@@ -73,6 +73,7 @@ export function KanbanSettingsModal({ isOpen, onClose }: KanbanSettingsModalProp
             />
             <Button onClick={handleAddColumn}>Add</Button>
           </div>
+          <i>use drag and drop to reorder</i>
           <DragDropContext onDragEnd={onDragEnd}>
             <Droppable droppableId="columns">
               {(provided) => (
