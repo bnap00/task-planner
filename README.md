@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Simple Task Planner
+
+A productivity-focused task management application built with [Next.js](https://nextjs.org).
+
+## Features
+
+- Eisenhower Matrix for prioritization
+- Kanban board for visual task management
+- Pomodoro timer with Picture-in-Picture (PiP) mode
+- Project-based task organization
+- Customizable Kanban columns & drag-and-drop support
+- Dark mode support
 
 ## Getting Started
 
-First, run the development server:
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Data & Privacy
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- All data is stored locally in your browser.
+- No personal data is collected or shared.
+- Clearing local storage will erase all task data.
 
-## Learn More
+## Contributing
 
-To learn more about Next.js, take a look at the following resources:
+We welcome contributions! Report issues or submit pull requests on GitHub:
+[https://github.com/bnap00/task-planner](https://github.com/bnap00/task-planner)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Deploy will auto deployed to [tasks.bnap.dev](https://tasks.bnap.dev)
 
-## Deploy on Vercel
+## Additional Info
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project follows the principles of [userfirst.dev](https://userfirst.dev) to prioritize user experience.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/bnap00/task-planner/blob/main/LICENSE) file for more details.
+
