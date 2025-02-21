@@ -2,7 +2,6 @@
 
 import { Button } from "@/components/ui/button";
 import { CheckSquare, PlusCircle } from "lucide-react";
-import { useTheme } from "next-themes";
 import { useMemo, useState } from "react";
 import { CompletedTasksModal } from "./components/completed-tasks-modal";
 import { CreateTaskModal } from "./components/create-task-modal";
@@ -13,7 +12,7 @@ import { SettingsModal } from "./components/settings-modal";
 import { useFilterContext } from "./contexts/filter-context";
 import { PipProvider } from "./contexts/pip-context";
 import { PomodoroProvider } from "./contexts/pomodoro-context";
-import { ProjectProvider, useProjectContext } from "./contexts/project-context";
+import { ProjectProvider } from "./contexts/project-context";
 import { SettingsProvider } from "./contexts/settings-context";
 import {
   TaskProvider,
@@ -27,13 +26,10 @@ function EisenhowerMatrixContent() {
   const [isCreateTaskModalOpen, setIsCreateTaskModalOpen] = useState(false);
   const [isCompletedModalOpen, setIsCompletedModalOpen] = useState(false);
   const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false);
-  const [showFilters, setShowFilters] = useState(true);
   const [preSelectedQuadrant, setPreSelectedQuadrant] = useState<
     Task["quadrant"] | undefined
   >(undefined);
-  const { theme, setTheme } = useTheme();
   const { tasks } = useTaskContext();
-  const { projects } = useProjectContext();
 
   const { selectedProjects } = useFilterContext();
 

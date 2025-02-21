@@ -30,7 +30,7 @@ export default function ProjectInfoPage() {
 
         <h2 className="text-2xl font-semibold">Data Storage</h2>
         <p>
-          All data in this application is stored locally in your browser's local
+          All data in this application is stored locally in your browser&apos;s local
           storage. We do not collect or store any of your personal information
           or task data on our servers.
         </p>
@@ -43,14 +43,14 @@ export default function ProjectInfoPage() {
 
         <h2 className="text-2xl font-semibold">Data Persistence</h2>
         <p>
-          Please note that clearing your browser's local storage or cache will
+          Please note that clearing your browser&apos;s local storage or cache will
           result in the loss of all your task data. We recommend regularly
           backing up your important information.
         </p>
 
         <h2 className="text-2xl font-semibold">No Warranty or Guarantee</h2>
         <p>
-          This application is provided "as is" without any warranties or
+          This application is provided &lsquo;as is&rsquo; without any warranties or
           guarantees. We are not responsible for any data loss or issues that
           may occur while using this application.
         </p>

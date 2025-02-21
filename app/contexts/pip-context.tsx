@@ -11,7 +11,15 @@ type PipContextType = {
   closePip: () => void
   updatePipContent: () => void
 }
+interface DocumentPictureInPicture {
+  requestWindow(options?: { width?: number; height?: number }): Promise<Window>;
+}
 
+declare global {
+  interface Window {
+    documentPictureInPicture?: DocumentPictureInPicture;
+  }
+}
 const PipContext = createContext<PipContextType | undefined>(undefined)
 
 export const usePipContext = () => {
@@ -58,10 +66,14 @@ export const PipProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const openPip = async () => {
     if ("documentPictureInPicture" in window) {
       try {
-        const pipWin = await window.documentPictureInPicture.requestWindow({
+        const pipWin = await window?.documentPictureInPicture?.requestWindow({
           width: 320,
           height: 240,
         })
+        if(!pipWin) {
+          alert("Failed to open PiP window.")
+          return;
+        }
         setPipWindow(pipWin)
 
         const doc = pipWin.document

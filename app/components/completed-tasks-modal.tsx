@@ -8,7 +8,6 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { useState } from "react";
-import { useKanbanContext } from "../contexts/kanban-context";
 import { useTaskContext } from "../contexts/task-context";
 
 type CompletedTasksModalProps = {
@@ -24,7 +23,6 @@ export function CompletedTasksModal({
 }: CompletedTasksModalProps) {
   const { tasks, toggleTaskDone, deleteTask, toggleHiddenFromKanban } =
     useTaskContext();
-  const { kanbanState, updateKanbanSettings } = useKanbanContext();
   const [currentPage, setCurrentPage] = useState(1);
 
   const completedTasks = tasks.filter((t) => t.done);

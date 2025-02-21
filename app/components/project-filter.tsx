@@ -9,7 +9,7 @@ import { useTaskContext } from "../contexts/task-context";
 export function ProjectFilter() {
   const { projects } = useProjectContext();
   const { tasks } = useTaskContext();
-  const { selectedProjects, setSelectedProjects, showFilters, setShowFilters } =
+  const { selectedProjects, setSelectedProjects } =
     useFilterContext();
 
   const toggleProject = (projectId: string) => {

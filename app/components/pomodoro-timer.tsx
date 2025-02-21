@@ -9,7 +9,6 @@ import { usePomodoroContext } from "../contexts/pomodoro-context"
 import { usePipContext } from "../contexts/pip-context"
 import { Minimize2, Maximize2, Settings } from "lucide-react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
-import { Checkbox } from "@/components/ui/checkbox"
 import { SettingsModal } from "./settings-modal"
 
 export function PomodoroTimer() {

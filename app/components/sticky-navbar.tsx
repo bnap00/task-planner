@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Moon, Sun, Settings, Menu, BookOpen, KanbanIcon as LayoutKanban, InfoIcon } from "lucide-react"
+import { Moon, Sun, Menu, BookOpen, KanbanIcon as LayoutKanban, InfoIcon } from "lucide-react"
 import { useTheme } from "next-themes"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import Link from "next/link"

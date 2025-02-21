@@ -71,7 +71,7 @@ export function CreateTaskModal({ isOpen, onClose, preSelectedQuadrant }: Create
               <SelectItem value="do-first">Do First</SelectItem>
               <SelectItem value="schedule">Schedule</SelectItem>
               <SelectItem value="delegate">Delegate</SelectItem>
-              <SelectItem value="dont-do">Don't Do</SelectItem>
+              <SelectItem value="dont-do">Don&apos;t Do</SelectItem>
             </SelectContent>
           </Select>
           <Select value={projectId} onValueChange={setProjectId}>
@@ -79,7 +79,7 @@ export function CreateTaskModal({ isOpen, onClose, preSelectedQuadrant }: Create
               <SelectValue placeholder="Select project (optional)" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value={undefined}>Unassigned</SelectItem>
+              <SelectItem value="">Unassigned</SelectItem>
               {projects.map((project) => (
                 <SelectItem key={project.id} value={project.id}>
                   {project.name}

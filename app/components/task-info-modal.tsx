@@ -98,7 +98,7 @@ export function TaskInfoModal({ isOpen, onClose, task }: TaskInfoModalProps) {
                 <SelectItem value="do-first">Do First</SelectItem>
                 <SelectItem value="schedule">Schedule</SelectItem>
                 <SelectItem value="delegate">Delegate</SelectItem>
-                <SelectItem value="dont-do">Don't Do</SelectItem>
+                <SelectItem value="dont-do">Don&apos;t Do</SelectItem>
               </SelectContent>
             </Select>
           </div>

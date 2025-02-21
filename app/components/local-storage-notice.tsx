@@ -36,7 +36,7 @@ export function LocalStorageNotice() {
         <DialogHeader>
           <DialogTitle>Important Notice: Local Storage Usage</DialogTitle>
           <DialogDescription>
-            This application uses your browser's local storage to save all your task data. Please be aware of the
+            This application uses your browser&apos;s local storage to save all your task data. Please be aware of the
             following risks:
           </DialogDescription>
         </DialogHeader>
@@ -46,19 +46,23 @@ export function LocalStorageNotice() {
             <li>Clearing your browser data or cache will result in data loss.</li>
             <li>Your data is not synced across devices or browsers.</li>
             <li>
-              While local storage is generally secure, it's not encrypted and could potentially be accessed by malicious
+              While local storage is generally secure, it&apos;s not encrypted and could potentially be accessed by malicious
               scripts.
             </li>
           </ul>
         </div>
         <DialogFooter className="sm:justify-between">
           <div className="flex items-center space-x-2">
-            <Checkbox id="dontShowAgain" checked={dontShowAgain} onCheckedChange={setDontShowAgain} />
+            <Checkbox
+              id="dontShowAgain"
+              checked={dontShowAgain}
+              onCheckedChange={(checked) => setDontShowAgain(checked === true)}
+            />
             <label
               htmlFor="dontShowAgain"
               className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
             >
-              Don't show this message again
+              Don&apos;t show this message again
             </label>
           </div>
           <Button onClick={handleClose}>I understand</Button>

@@ -14,6 +14,7 @@ export function useLocalStorage<T>(key: string, initialValue: T) {
       console.warn(`Error reading localStorage key "${key}":`, error)
       return initialValue
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [key]) // Removed initialValue to prevent unnecessary re-renders
 
   // Initialize state lazily
